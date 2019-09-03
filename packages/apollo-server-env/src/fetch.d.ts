@@ -22,6 +22,7 @@ export declare class Headers implements Iterable<[string, string]> {
   entries(): Iterator<[string, string]>;
   keys(): Iterator<string>;
   values(): Iterator<[string]>;
+  raw(): Iterator<string>; // access raw Set-Cookie headers manually using Headers.raw(), this is a node-fetch only API
   [Symbol.iterator](): Iterator<[string, string]>;
 }
 
