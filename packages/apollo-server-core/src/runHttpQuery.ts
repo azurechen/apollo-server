@@ -307,7 +307,7 @@ export async function processHTTPRequest<TContext>(
         }
 
         if (response.http) {
-          for (const [name, value] of response.http.headers) {
+          for (const [name, value] of Object.entries(response.http.headers.raw())) {
             responseInit.headers![name] = value;
           }
         }
